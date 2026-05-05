@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>CSV Analyzer</h1>
+        <p>Upload any CSV or Excel file and get instant insights</p>
+    </header>
+
+    <!-- Upload Section -->
+    <section class="upload-section">
+        <div class="upload-box" id="uploadBox">
+            <p>📂 Drag & drop your file here</p>
+            <p>or</p>
+            <input type="file" id="fileInput" accept=".csv, .xlsx">
+            <button onclick="analyzeFile()">Analyze</button>
+        </div>
+    </section>
+
+    <!-- Summary Cards -->
+    <section class="cards-section" id="cardsSection" style="display:none;">
+        <div class="card">
+            <h3>Total Rows</h3>
+            <p id="totalRows">-</p>
+        </div>
+        <div class="card">
+            <h3>Total Columns</h3>
+            <p id="totalCols">-</p>
+        </div>
+        <div class="card">
+            <h3>Missing Values</h3>
+            <p id="totalMissing">-</p>
+        </div>
+        <div class="card">
+            <h3>Duplicate Rows</h3>
+            <p id="totalDuplicates">-</p>
+        </div>
+    </section>
+
+    <!-- Data Preview Table -->
+    <section class="table-section" id="tableSection" style="display:none;">
+        <h2>Data Preview (First 10 Rows)</h2>
+        <div class="table-wrapper">
+            <table id="previewTable"></table>
+        </div>
+    </section>
+
+    <!-- Numeric Stats -->
+    <section class="stats-section" id="statsSection" style="display:none;">
+        <h2> Numeric Column Stats</h2>
+        <div id="statsContainer"></div>
+    </section>
+
+    <!-- Charts -->
+    <section class="charts-section" id="chartsSection" style="display:none;">
+        <h2>Charts</h2>
+        <div id="chartsContainer"></div>
+    </section>
+
+    <!-- Top Values -->
+    <section class="top-section" id="topSection" style="display:none;">
+        <h2> Top Values (Text Columns)</h2>
+        <div id="topContainer"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
